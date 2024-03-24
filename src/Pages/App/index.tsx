@@ -1,11 +1,12 @@
 import './App.css';
+import {BrowserRouter} from 'react-router-dom';
+import AppRoutes from './App.routes';
 
 function App() {
   return (
-    <div className='App'>
-      <p>This website is under construction</p>
-      <img src="https://res.cloudinary.com/dvdmz9djk/image/upload/v1711314282/JOYAT/images/ldjpeajih2iotymeqxa7.svg" alt=""/>
-    </div>
+    <BrowserRouter>
+      <AppRoutes/>
+    </BrowserRouter>
   )
 }
 
