@@ -2,11 +2,10 @@ import './App.css';
 
 function App() {
   return (
-    <ul>
-      <li>item</li>
-      <li>item</li>
-      <li>item</li>
-    </ul>
+    <div className='App'>
+      <p>This website is under construction</p>
+      <img src="https://res.cloudinary.com/dvdmz9djk/image/upload/v1711314282/JOYAT/images/ldjpeajih2iotymeqxa7.svg" alt=""/>
+    </div>
   )
 }
 
