@@ -23,7 +23,6 @@ const Contact: React.FC<ContactProps> = ()=>(
                 emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, values, import.meta.env.VITE_EMAILJS_PUBLIC_ID).then(res=>{
                     setSubmitting(false);
                     resetForm();
-                    console.log(res);
                 }).catch(e=>{
                     console.log('An erros has ocurred sending email', e);
                     setSubmitting(false);
