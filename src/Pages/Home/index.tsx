@@ -8,12 +8,11 @@ import { HomeProps } from './Home.props';
 
 const Home: React.FC<HomeProps> = ()=>{
     return <div className='home'>
-        <Header/>
+        <Header showNavigation={true}/>
         <Hero/>
         <About/>
         <Contact/>
         <Location/>
     </div>
 }
-
 export default Home;

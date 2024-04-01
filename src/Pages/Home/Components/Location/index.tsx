@@ -4,10 +4,8 @@ import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { Icon, LatLngExpression } from "leaflet";
 import { LocationProps } from './Location.props';
 import { TiLocation } from "react-icons/ti";
-import { useState } from "react";
 
 const Location: React.FC<LocationProps> = ()=>{
-    const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
     const position: LatLngExpression = [
         31.306470625996997, -113.52935150152418,
     ];
