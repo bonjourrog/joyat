@@ -1,3 +1,4 @@
+import Footer from '../../Components/Footer';
 import Header from '../../Components/Header';
 import About from './Components/About';
 import Contact from './Components/Contact';
@@ -15,6 +16,7 @@ const Home: React.FC<HomeProps> = ()=>{
         <Contact/>
         <Location/>
         <WhyUs/>
+        <Footer/>
     </div>
 }
 export default Home;
