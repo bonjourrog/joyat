@@ -1,5 +1,12 @@
 .home{
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
+    max-width: 100vw;
+}
+.home__header{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
