@@ -1,0 +1,44 @@
+.contact{
+    width: 100vw;
+    height: 100vh;
+}
+.contact__header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.contact__header>h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 60%;
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+.contact__header > img{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.contact__header::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+@media screen and (max-width:600px) {
+    .contact__header>h1{
+        width: 100%;
+        padding: 0em 2em;
+        font-size: 1.5em;
+    }
+}

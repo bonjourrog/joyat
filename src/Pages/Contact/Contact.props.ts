@@ -1,3 +1,3 @@
-export interface ContactForm{
+export interface ContactFormProps{
     
 }
