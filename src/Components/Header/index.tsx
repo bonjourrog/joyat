@@ -2,28 +2,31 @@ import { useEffect, useState } from 'react';
 import './Header.css';
 import { HeaderProps } from './header.props';
 import { HiMenuAlt3 } from "react-icons/hi";
+import { Link } from "react-scroll";
+import {Link as NavigaTo} from 'react-router-dom';
 
 const Header: React.FC<HeaderProps> = ({showNavigation})=>{
     const [menuOpened, setMenuOpened] = useState(false);
-    const [scrollPosition, setScrollPosition] = useState<number>(window.screenY);
+    const [scrollPosition, setScrollPosition] = useState<number>(window.scrollY);
     const handleScroll = ()=>{
         setScrollPosition(window.scrollY);
     }
     useEffect(()=>{
+        setScrollPosition(0)
         window.addEventListener('scroll', handleScroll);
         return ()=>{
             window.removeEventListener('scroll', handleScroll);
         }
     }, [])
-    return <header style={{backgroundColor:scrollPosition>60?'white': 'transparent', color:scrollPosition>60?'#1b1b1b':'white'}} className='header'>
-        <span style={{width:showNavigation ? 'auto' : '100%'}}>JOYAT</span>
+    return <header style={{backgroundColor:scrollPosition>60?'white': 'transparent', color:scrollPosition>60?'#1b1b1b':'white', boxShadow:scrollPosition>60?'.3em .3em 1em rgba(0, 0, 0, 0.1)':''}} className='header'>
+        <span style={{width:showNavigation ? 'auto' : '100%'}}><NavigaTo style={{color:scrollPosition>60?'#1b1b1b':'white'}} to={"/"}>JOYAT</NavigaTo></span>
         {
             showNavigation ? 
                 <nav className='navigation' style={{right: menuOpened ? '0em' : '-100vw'}}>
                     <ul className='navigation__list'>
-                        <li className='navigation__link'>Conocenos</li>
-                        <li className='navigation__link'>Contacto</li>
-                        <li className='navigation__link'>Ubicación</li>
+                        <li className='navigation__link'><Link onClick={()=>setMenuOpened(false)} to='about' smooth={true}>Conocenos</Link></li>
+                        <li className='navigation__link'><Link onClick={()=>setMenuOpened(false)} to='contact' smooth={true}>Contacto</Link></li>
+                        <li className='navigation__link'><Link onClick={()=>setMenuOpened(false)} to='location'smooth={true}>Ubicación</Link></li>
                     </ul>
                 </nav>
             : null

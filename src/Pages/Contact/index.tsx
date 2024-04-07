@@ -8,7 +8,7 @@ const Contact: React.FC<ContactFormProps> = ()=>{
     return <div className='contact'>
         <div className='contact__header'>
             <h1>¿Necesitas ayuda? Contáctanos y te brindaremos asistencia personalizada</h1>
-            <Header showNavigation/>
+            <Header showNavigation={false}/>
             <img src="https://res.cloudinary.com/dvdmz9djk/image/upload/v1711558391/JOYAT/images/vgjnh5kfbvre9pysgpmp.jpg" alt="" />
         </div>
         <ContactForm/>

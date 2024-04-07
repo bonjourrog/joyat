@@ -5,7 +5,7 @@ import { ContactSchema } from './Contact.schema';
 import emailjs from '@emailjs/browser';
 
 const Contact: React.FC<ContactProps> = ()=>(
-    <div className='form'>
+    <div className='form' id='contact'>
         <h2 className='form__headline'>Contacto</h2>
         <div className='contact-info'>
             <p>contacto@joyatinmobiliaria.com</p>
