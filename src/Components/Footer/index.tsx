@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = ()=>{
                 <ul>
                     <li className='footer__nav-title'>Menu</li>
                     <li><Link className='footer__nav-link' to={"/contact"}>Contacto</Link></li>
-                    <li><Link className='footer__nav-link' to={"/buscador"}>Buscador</Link></li>
+                    <li><Link className='footer__nav-link' to={"/results"}>Buscador</Link></li>
                 </ul>
             </nav>
             <ul className='footer__times'>
