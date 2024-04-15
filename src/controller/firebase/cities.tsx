@@ -11,3 +11,11 @@ export const getCities = async()=>{
     });
     return cities;
 }
+
+export const getLotes = async()=>{
+    let lotes = []
+    const querySnapshot = await getDocs(collection(db,'lote'));
+    querySnapshot.forEach(doc=>{
+        console.log(doc.data());
+    });
+}

@@ -9,7 +9,7 @@ const Hero: React.FC<HeroProps> = ()=>{
         <img src="https://res.cloudinary.com/dvdmz9djk/image/upload/v1711558391/JOYAT/images/vgjnh5kfbvre9pysgpmp.jpg" alt="" />
         <div className='hero__content'>
             <p className='hero__caption'>Your dream home awaits discover it with us.</p>
-            <Search/>
+            <Search showBtn={true}/>
         </div>
     </div>
 }

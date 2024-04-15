@@ -1,20 +1,34 @@
 import './Search.css';
-import { SearchProps } from 'antd/es/input';
 import { IoSearch } from "react-icons/io5";
-import {Select} from 'antd';
-
-const Search: React.FC<SearchProps> = ()=>{
+import {Select, notification} from 'antd';
+import { SearchProps } from './Search.props';
+import { Link } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { AppContext } from '../../Context/App';
+const Search: React.FC<SearchProps> = ({outline, showBtn})=>{
+    const [api, contextHolder] = notification.useNotification();
+    const {selectedCity, setSelectedCity} = useContext(AppContext);
+    const handleSearch = ()=>{
+        api.info({
+            message:"Ciudad no seleccionada",
+            description:"Por favor, selecciona una ciudad para continuar",
+        });
+    }
+    useEffect(()=>{
+    }, [])
     return <form className='search-box'>
         <div className='search-box__icon'>
-            <IoSearch className='icon' />
+            <IoSearch className='icon'/>
         </div>
-        <Select allowClear placeholder="Seleccione una ciudad" showSearch className='search-box__cities' options={[
+        <Select onSelect={(title, _)=>setSelectedCity(title)} allowClear value={selectedCity?selectedCity:undefined} placeholder="Seleccione una ciudad" showSearch className='search-box__cities' options={[
             {title:"Puerto Peñasco", value:"Puerto Peñasco"},
             {title:"La Paz", value:"La Paz"},
-            {title:"Los Cabos", value:"Los Cabos"},
-            {title:"Guadalajara", value:"Guadalajara"},
+            {title:"Los Cabos", value:"Los Cabos"}
         ]}/>
-        <button className='search-box__btn'>BUSCAR</button>
+        {contextHolder}
+        {
+            showBtn ? <Link onClick={()=>{handleSearch()}} to={selectedCity&&'/results'} className={`search-box__btn ${outline ? 'search-box__btn--outline' : 'search-box__btn--solid'}`}>BUSCAR</Link> : null
+        }
     </form>
 }
 export default Search;
