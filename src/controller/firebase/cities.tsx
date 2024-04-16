@@ -1,6 +1,7 @@
 import { collection, getDocs } from "firebase/firestore"; 
 import { db } from "../../db/firebase";
 import { SelectProps } from 'antd';
+import { City } from "../../types/City";
 
 export const getCities = async()=>{
     let cities: SelectProps['options'] = [];
@@ -11,11 +12,11 @@ export const getCities = async()=>{
     });
     return cities;
 }
-
-export const getLotes = async()=>{
-    let lotes = []
+export const getLotS = async()=>{
+    let lots:City[] = []
     const querySnapshot = await getDocs(collection(db,'lote'));
     querySnapshot.forEach(doc=>{
-        console.log(doc.data());
+        lots.push(doc.data() as City);
     });
+    return lots;
 }
