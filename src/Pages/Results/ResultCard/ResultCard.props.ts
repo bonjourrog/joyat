@@ -1,6 +1,6 @@
-import { City } from "../../../types/City";
+import { Lot } from "../../../types/Lot";
 
 export interface ResulCardProps{
-    lot: City
+    lot: Lot;
     index: number;
 }

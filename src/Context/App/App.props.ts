@@ -1,5 +1,5 @@
 import { ReactNode, SetStateAction } from "react";
-import { City } from "../../types/City";
+import { Lot } from "../../types/Lot";
 import { LatLngExpression } from "leaflet";
 
 export interface AppProviderProps{
@@ -8,8 +8,8 @@ export interface AppProviderProps{
 export interface AppContextProps{
     selectedCity: string;
     setSelectedCity: React.Dispatch<SetStateAction<string>>;
-    lots: City[];
-    setLots: React.Dispatch<SetStateAction<City[]>>;
+    lots: Lot[];
+    setLots: React.Dispatch<SetStateAction<Lot[]>>;
     zoomLocation: boolean;
     setZoomLocation: React.Dispatch<SetStateAction<boolean>>;
     locationLatLng: LatLngExpression,

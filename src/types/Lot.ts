@@ -1,6 +1,6 @@
 import { LatLngExpression } from "leaflet";
 
-export interface City{
+export interface Lot{
     id: string;
     city: string;
     description: string;
