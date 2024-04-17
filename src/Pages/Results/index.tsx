@@ -7,7 +7,6 @@ import { AppContext } from '../../Context/App';
 import Map from '../../Components/Map';
 import { LatLngExpression } from 'leaflet';
 import Search from '../../Components/Search';
-import { getLotS } from '../../controller/firebase/cities';
 import ResultCard from './ResultCard';
 
 const images: {[key:string]:string} = {
@@ -17,22 +16,16 @@ const images: {[key:string]:string} = {
 }
 
 const Results: React.FC<ResultsProps> = ()=>{
-    const  { selectedCity, setLots, lots } = useContext(AppContext);
+    const  { selectedCity, lots } = useContext(AppContext);
     const [markers, setMarkers] = useState<LatLngExpression[]>([]);
     useEffect(()=>{
-        getLotS().then(elem=>{
-            setLots(elem);
-            if(elem.length>0 && markers.length==0){
-                const newArray:LatLngExpression[] = [];
-                lots.forEach(lot=>{
-                    newArray.push(lot.location)
-                });
-                setMarkers(newArray);
-            }
-        }).catch(e=>{
-            console.log(e);
+        const newArray:LatLngExpression[] = [];
+        lots.forEach(lot=>{
+            newArray.push(lot.location);
         });
-    },[selectedCity])
+        setMarkers(newArray);
+    },[selectedCity]);
+
     return <div className='results'>
         <section className='results__header'>
             <div className='results__headlines'>
@@ -51,7 +44,7 @@ const Results: React.FC<ResultsProps> = ()=>{
                     <Search showBtn={false}/>
                 </div>
                 {
-                    selectedCity && markers.length>0 ? <div className='results-bottom__map'><Map position={[31.305624989953, -113.42662792477782]} zoom={11} markers={markers}/></div> : <img className='results-bottom__img' src="https://res.cloudinary.com/dvdmz9djk/image/upload/v1712778687/JOYAT/images/ss6u3tfqghju0qrgocyv.svg" alt="" />
+                    selectedCity ? <div className='results-bottom__map'><Map position={[31.305624989953, -113.42662792477782]} zoom={11} markers={markers}/></div> : <img className='results-bottom__img' src="https://res.cloudinary.com/dvdmz9djk/image/upload/v1712778687/JOYAT/images/ss6u3tfqghju0qrgocyv.svg" alt="" />
                 }
                 <div style={{right: selectedCity? "-3em" : "-40em", opacity: selectedCity ? '1':'0'}} className='results-bottom__list'>
                     {
