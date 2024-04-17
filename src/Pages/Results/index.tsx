@@ -8,6 +8,7 @@ import Map from '../../Components/Map';
 import { LatLngExpression } from 'leaflet';
 import Search from '../../Components/Search';
 import { getLotS } from '../../controller/firebase/cities';
+import ResultCard from './ResultCard';
 
 const images: {[key:string]:string} = {
     "Puerto Peñasco":"https://res.cloudinary.com/dvdmz9djk/image/upload/v1712691254/JOYAT/images/chzwvowkloon0o6g0n8b.jpg",
@@ -54,18 +55,8 @@ const Results: React.FC<ResultsProps> = ()=>{
                 }
                 <div style={{right: selectedCity? "-3em" : "-40em", opacity: selectedCity ? '1':'0'}} className='results-bottom__list'>
                     {
-                        lots.map((elem, index)=>(
-                            <div className='results-bottom__list-elem' key={index}>
-                                <div className='results-image'>
-                                    <img src="https://img.resemmedia.com/eyJidWNrZXQiOiJwcmQtbGlmdWxsY29ubmVjdC1iYWNrZW5kLWIyYi1pbWFnZXMiLCJrZXkiOiJpbmdlc3Rlci8wMjRlODk4YS0yOTM0LTNjMzctOTQwNy00OTZjZGI5Nzk1MjMvNDFmMjZlNThkZDYzOGZlYzNmMzAyYTFhYjBlMTIwNjg4MWQ3NWRiMWJmOTNjMWE0MDgyNDNjMzIwM2JiMTY4NC5qcGciLCJicmFuZCI6IlJFU0VNIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjozNTQsImhlaWdodCI6MjQwLCJmaXQiOiJjb3ZlciJ9fX0=" alt="" />
-                                </div>
-                                <ul className='results__list'>
-                                    <li className='results__elem results__elem--name'>{elem.name}</li>
-                                    <li className='results__elem results__elem--price'>{elem.price}</li>
-                                    <li className='results__elem results__elem--description'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                                    <li className='results__elem results__elem--size'>{elem.size}</li>
-                                </ul>
-                            </div>
+                        lots.map((lot, index)=>(
+                            <ResultCard key={index} index={index} lot={lot}/>
                         ))
                     }
                 </div>
