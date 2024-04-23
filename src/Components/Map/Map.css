@@ -2,3 +2,23 @@
     width: 100%;
     height: 100%;
 }
+.custome-marker::before{
+    position: absolute;
+    content: "";
+    width: 3em;
+    height: 3em;
+    border-radius: 50em;
+    background-color: #7f8eff6e;
+    z-index: -3 !important;
+}
+.custome-marker{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: .6em !important;
+    height: .6em !important;
+    border-radius: 50em;
+    background-color: #001eff;
+    z-index: 3em !important;
+}

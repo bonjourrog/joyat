@@ -10,4 +10,6 @@ export interface Lot{
     name: string;
     price: number;
     size: string;
+    location_image:string;
+    images:string[];
 }

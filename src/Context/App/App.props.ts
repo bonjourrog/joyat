@@ -14,4 +14,7 @@ export interface AppContextProps{
     setZoomLocation: React.Dispatch<SetStateAction<boolean>>;
     locationLatLng: LatLngExpression,
     setLocationLatLng: React.Dispatch<SetStateAction<LatLngExpression>>;
+    lotSelected:Lot;
+    setLotSelected:React.Dispatch<SetStateAction<Lot>>;
+    showLot:boolean, setShowLot:React.Dispatch<SetStateAction<boolean>>;
 }
