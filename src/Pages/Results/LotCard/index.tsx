@@ -10,24 +10,10 @@ import { RxSize } from "react-icons/rx";
 
 
 const LotCard: React.FC<LotCardProps> = ()=>{
-    const {lotSelected} = useContext(AppContext);
-    const lotImageRef = useRef<HTMLDivElement>(null);
-    const showLotImage = ()=>{
-        const elem= lotImageRef.current;
-        // if(elem!==null){
-        //     elem.style.position="fixed";
-        //     elem.style.zIndex="10";
-        //     elem.style.width="70vw";
-        //     elem.style.height="70vh";
-        //     elem.style.top="50%";
-        //     elem.style.transform="translateY(-50%)";
-        //     elem.style.left="50%";
-        //     elem.style.transform="translateX(-50%)";
-        //     elem.before("<div style='position:'fixed' width:'100vw' height:'100vh' z-index:'11' backbground:'black''></div>")
-        // }
+    const {lotSelected, setShowSlideShow} = useContext(AppContext);
+    const handleSlideshow = ()=>{
+        setShowSlideShow(true);
     }
-    console.log(lotSelected.images.length);
-    
     return <div className='lot'>
         <div className='lot__images' style={{height:lotSelected.images[0].length>0?'':'auto'}}>
             <div className='lot__image-cover'>
@@ -36,7 +22,7 @@ const LotCard: React.FC<LotCardProps> = ()=>{
             {
                 lotSelected.images[0].length>0?<div className='lot__images-list'>{lotSelected!==undefined
                     ?lotSelected.images.map(elem=>
-                        <div className='lot__image' onClick={()=>showLotImage()} ref={lotImageRef}>
+                        <div className='lot__image' onClick={()=>handleSlideshow()}>
                             <div className='show-images'><RiFullscreenExitFill/></div>
                             <img src={elem} alt=""/>
                         </div>

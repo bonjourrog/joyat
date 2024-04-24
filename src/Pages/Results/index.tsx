@@ -2,7 +2,7 @@ import './Results.css';
 import Header from '../../Components/Header';
 import { ResultsProps } from './Results.props';
 import Footer from '../../Components/Footer';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { AppContext } from '../../Context/App';
 import Map from '../../Components/Map';
 import { LatLngExpression, divIcon } from 'leaflet';
@@ -10,6 +10,7 @@ import Search from '../../Components/Search';
 import ResultCard from './ResultCard';
 import LotCard from './LotCard';
 import { MdOutlineChevronLeft } from "react-icons/md";
+import Slideshow from '../../Components/Slideshow';
 
 const images: {[key:string]:string} = {
     "Puerto Peñasco":"https://res.cloudinary.com/dvdmz9djk/image/upload/v1712691254/JOYAT/images/chzwvowkloon0o6g0n8b.jpg",
@@ -18,7 +19,7 @@ const images: {[key:string]:string} = {
 }
 
 const Results: React.FC<ResultsProps> = ()=>{
-    const  { selectedCity, lots, showLot, setShowLot } = useContext(AppContext);
+    const  { selectedCity, lots, showLot, setShowLot, showSlideshow } = useContext(AppContext);
     const [markers, setMarkers] = useState<LatLngExpression[]>([]);
     const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
@@ -29,12 +30,10 @@ const Results: React.FC<ResultsProps> = ()=>{
     const handleLotDetails = ()=>{
         setShowLot(false)
     }
-
     useEffect(()=>{
         window.addEventListener('resize', handleWindowWidth);
         return ()=> window.removeEventListener('resize', handleWindowWidth);
-    })
-
+    },[]);
     useEffect(()=>{
         const newArray:LatLngExpression[] = [];
         lots.forEach(lot=>{
@@ -44,6 +43,11 @@ const Results: React.FC<ResultsProps> = ()=>{
     },[selectedCity]);
 
     return <div className='results'>
+        {
+            showSlideshow?<div className='results__slideshow'>
+                <Slideshow images={[""]}/>
+            </div>:null
+        }
         <section className='results__header'>
             <div className='results__headlines'>
                 <h1>{selectedCity? selectedCity:"Selecciona una ciudad para mostrar los terrenos disponibles"}</h1>
@@ -57,11 +61,11 @@ const Results: React.FC<ResultsProps> = ()=>{
         </section>
         <section className='results-bottom'>
             <div className='results-bottom__container'>
-                <div className='results-bottom__search'>
+                <div className='results-bottom__search' style={{left:selectedCity?'4em':'50%', transform:selectedCity?'none':'translateX(-50%)'}}>
                     <Search showBtn={false}/>
                 </div>
                 {
-                    selectedCity ? <div className='results-bottom__map'><Map position={[31.305624989953, -113.42662792477782]} zoom={11} markers={markers}/></div> : <img className='results-bottom__img' src="https://res.cloudinary.com/dvdmz9djk/image/upload/v1712778687/JOYAT/images/ss6u3tfqghju0qrgocyv.svg" alt="" />
+                    selectedCity && windowWidth>800 ? <div className='results-bottom__map'><Map position={[31.305624989953, -113.42662792477782]} zoom={11} markers={markers}/></div> : <img className='results-bottom__img' src="https://res.cloudinary.com/dvdmz9djk/image/upload/v1712778687/JOYAT/images/ss6u3tfqghju0qrgocyv.svg" alt="" />
                 }
                 <div style={{right: selectedCity? "2em" : "-1em", opacity: selectedCity ? '1':'0', backgroundColor:showLot?'white':'white'}} className='results-bottom__list'>
                     {windowWidth>800?<p style={{display:showLot?'none':'block', fontSize:'4em', padding:'.2em', fontWeight:'bold', opacity:'.1', letterSpacing:'.2em', fontStyle:'italic'}}>JOYAT</p>:null}

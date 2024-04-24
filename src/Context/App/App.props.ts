@@ -17,4 +17,8 @@ export interface AppContextProps{
     lotSelected:Lot;
     setLotSelected:React.Dispatch<SetStateAction<Lot>>;
     showLot:boolean, setShowLot:React.Dispatch<SetStateAction<boolean>>;
+    showSlideshow: boolean, 
+    setShowSlideShow: React.Dispatch<SetStateAction<boolean>>;
+    slideshowImages: string[];
+    setSlideshowImages: React.Dispatch<SetStateAction<string[]>>;
 }

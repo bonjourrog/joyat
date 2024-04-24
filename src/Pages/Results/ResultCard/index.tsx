@@ -5,13 +5,14 @@ import { ResulCardProps } from './ResultCard.props';
 import { RxSize } from "react-icons/rx";
 
 const ResultCard: React.FC<ResulCardProps> = ({lot, index})=>{
-    const {setZoomLocation, setLocationLatLng, setLotSelected, setShowLot} = useContext(AppContext);
+    const {setZoomLocation, setLocationLatLng, setLotSelected, setShowLot, setSlideshowImages} = useContext(AppContext);
 
     const handleZoom = ()=>{
         setZoomLocation(true);
         setLocationLatLng(lot.location),
         setLotSelected(lot);
-        setShowLot(true)
+        setShowLot(true);
+        setSlideshowImages(lot.images)
     }
 
     return <div className='result-card' key={index} onClick={handleZoom}>

@@ -12,6 +12,8 @@ export const AppProvider:React.FC<AppProviderProps> = ({children})=>{
     const [lotSelected, setLotSelected] = useState<Lot>({} as Lot);
     const [lots, setLots] = useState<Lot[]>([]);
     const [showLot, setShowLot] = useState<boolean>(false);
+    const [showSlideshow, setShowSlideShow] = useState<boolean>(false);
+    const [slideshowImages, setSlideshowImages] = useState<string[]>([]);
     return <AppContext.Provider value={{
         selectedCity,
         setSelectedCity,
@@ -25,6 +27,10 @@ export const AppProvider:React.FC<AppProviderProps> = ({children})=>{
         setLotSelected,
         showLot, 
         setShowLot,
+        showSlideshow, 
+        setShowSlideShow,
+        slideshowImages, 
+        setSlideshowImages
     }}>
         {children}
     </AppContext.Provider>
