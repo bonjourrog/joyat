@@ -31,8 +31,8 @@ const Search: React.FC<SearchProps> = ({outline, showBtn})=>{
         </div>
         <Select onSelect={(title, _)=>setSelectedCity(title)} allowClear value={selectedCity?selectedCity:undefined} placeholder="Seleccione una ciudad" showSearch className='search-box__cities' options={[
             {title:"Puerto Peñasco", value:"Puerto Peñasco"},
-            {title:"La Paz", value:"La Paz"},
-            {title:"Los Cabos", value:"Los Cabos"}
+            // {title:"La Paz", value:"La Paz"},
+            // {title:"Los Cabos", value:"Los Cabos"}
         ]}/>
         {contextHolder}
         {
