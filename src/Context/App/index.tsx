@@ -14,6 +14,7 @@ export const AppProvider:React.FC<AppProviderProps> = ({children})=>{
     const [showLot, setShowLot] = useState<boolean>(false);
     const [showSlideshow, setShowSlideShow] = useState<boolean>(false);
     const [slideshowImages, setSlideshowImages] = useState<string[]>([]);
+    const [layers, setLayers] = useState<LatLngExpression[] | LatLngExpression[][]>([])
     return <AppContext.Provider value={{
         selectedCity,
         setSelectedCity,
@@ -30,7 +31,9 @@ export const AppProvider:React.FC<AppProviderProps> = ({children})=>{
         showSlideshow, 
         setShowSlideShow,
         slideshowImages, 
-        setSlideshowImages
+        setSlideshowImages,
+        layers, 
+        setLayers
     }}>
         {children}
     </AppContext.Provider>

@@ -21,4 +21,6 @@ export interface AppContextProps{
     setShowSlideShow: React.Dispatch<SetStateAction<boolean>>;
     slideshowImages: string[];
     setSlideshowImages: React.Dispatch<SetStateAction<string[]>>;
+    layers:LatLngExpression[] | LatLngExpression[][],
+    setLayers:React.Dispatch<SetStateAction<LatLngExpression[] | LatLngExpression[][]>>
 }

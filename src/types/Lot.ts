@@ -12,4 +12,5 @@ export interface Lot{
     size: string;
     location_image:string;
     images:string[];
+    layers:LatLngExpression[] | LatLngExpression[][]
 }
