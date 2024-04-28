@@ -6,7 +6,7 @@ import { IoClose } from "react-icons/io5";
 import { AppContext } from '../../Context/App';
 
 
-const Slideshow: React.FC<SlideshowProps> = ({images})=>{
+const Slideshow: React.FC<SlideshowProps> = ({})=>{
     const {slideshowImages, setShowSlideShow} = useContext(AppContext)
     const [imageIndex, setImageIndex] = useState<number>(0);
     const [image, setImage] = useState<string>("");

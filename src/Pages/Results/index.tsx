@@ -2,10 +2,10 @@ import './Results.css';
 import Header from '../../Components/Header';
 import { ResultsProps } from './Results.props';
 import Footer from '../../Components/Footer';
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../Context/App';
 import Map from '../../Components/Map';
-import { LatLngExpression, divIcon } from 'leaflet';
+import { LatLngExpression } from 'leaflet';
 import Search from '../../Components/Search';
 import ResultCard from './ResultCard';
 import LotCard from './LotCard';
@@ -45,7 +45,7 @@ const Results: React.FC<ResultsProps> = ()=>{
     return <div className='results'>
         {
             showSlideshow?<div className='results__slideshow'>
-                <Slideshow images={[""]}/>
+                <Slideshow/>
             </div>:null
         }
         <section className='results__header'>

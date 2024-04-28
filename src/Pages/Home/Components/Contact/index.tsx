@@ -20,7 +20,7 @@ const Contact: React.FC<ContactProps> = ()=>(
             }}
             validationSchema={ContactSchema}
             onSubmit={(values, {setSubmitting, resetForm})=>{
-                emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, values, import.meta.env.VITE_EMAILJS_PUBLIC_ID).then(res=>{
+                emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, values, import.meta.env.VITE_EMAILJS_PUBLIC_ID).then(_=>{
                     setSubmitting(false);
                     resetForm();
                 }).catch(e=>{

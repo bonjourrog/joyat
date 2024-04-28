@@ -1,4 +1,4 @@
-import { useContext, useReducer, useRef } from 'react';
+import { useContext} from 'react';
 import './LotCard.css';
 import { LotCardProps } from './LotCard.props';
 import { AppContext } from '../../../Context/App';

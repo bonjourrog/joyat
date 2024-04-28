@@ -1,7 +1,7 @@
 import './WhyUs.css';
-import { WhyUs } from './WhyUs.props';
+import { WhyUsProps } from './WhyUs.props';
 
-const WhyUs: React.FC<WhyUs> = ()=>{
+const WhyUs: React.FC<WhyUsProps> = ()=>{
     return <section className='whyus'>
         <h2 className='whyus__headline'>Eligenos</h2>
         <ul className='whyus__list'>

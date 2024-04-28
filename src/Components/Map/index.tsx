@@ -9,7 +9,7 @@ const LocationMarker = ()=>{
     const {zoomLocation, setZoomLocation,locationLatLng} = useContext(AppContext);
     const map = useMapEvents({
         click(e){
-            console.log(e.latlng); 
+            // console.log(e.latlng); 
             if(zoomLocation){
                 map.flyTo(locationLatLng, 18);
                 setZoomLocation(false);
@@ -29,7 +29,6 @@ const Map: React.FC<MapProps> = ({position, zoom, markers})=>{
 
         useEffect(()=>{
             setPolyline(layers);
-            console.log("Polyine", layers);
         },[layers])
     
     const customeIcon = new DivIcon({

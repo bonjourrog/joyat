@@ -1,3 +1,3 @@
-export interface WhyUs{
+export interface WhyUsProps{
     
 }

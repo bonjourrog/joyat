@@ -14,7 +14,6 @@ const ResultCard: React.FC<ResulCardProps> = ({lot, index})=>{
         setShowLot(true);
         setSlideshowImages(lot.images)
         setLayers(lot.layers)
-        console.log(lot.layers);
         
     }
 
