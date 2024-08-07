@@ -8,7 +8,7 @@ export interface Lot{
     location:LatLngExpression;
     location_name: string;
     name: string;
-    price: number;
+    price: Array<number|string>;
     size: string;
     location_image:string;
     images:string[];
