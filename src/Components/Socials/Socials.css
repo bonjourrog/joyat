@@ -1,0 +1,56 @@
+.socials{
+    position: relative;
+    display: flex;
+    gap: .7em;
+}
+.socials>a{
+    color: rgb(255, 255, 255);
+}
+.socials--vertical{
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+.socials--vertical>a{
+    color: rgba(255, 255, 255, 0.694);
+}
+.socials--vertical>a:hover{
+    color: white;
+}
+.socials--vertical::before{
+    content: "";
+    border-left: .001em solid rgba(255, 255, 255, 0.508);
+    height: 5em;
+    width: 0em;
+}
+.socials--vertical::after{
+    content: "";
+    border-left: .001em solid rgba(255, 255, 255, 0.508);
+    height: 5em;
+    width: 0em;
+}
+.socials--left{
+    position: absolute;
+    left: 2em;
+    bottom: 4em;
+}
+@media screen and (max-width:800px) {
+    .socials--left{
+        left: 50%;
+        bottom: 2em;
+        transform: translateX(-50%);
+    }
+    .socials--vertical{
+        flex-direction: row;
+    }
+    .socials--vertical::before{
+        height: 0em;
+        width: 5em;
+        border-top: .1em solid rgba(255, 255, 255, 0.508);
+    }
+    .socials--vertical::after{
+        height: 0em;
+        width: 5em;
+        border-top: .1em solid rgba(255, 255, 255, 0.508);
+    }
+}
