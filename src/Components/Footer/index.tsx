@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
 import { FooterProps } from './Footer.props';
+import { Socials } from '../Socials';
 
 const Footer: React.FC<FooterProps> = ()=>{
     return <footer className='footer'>
@@ -15,6 +16,10 @@ const Footer: React.FC<FooterProps> = ()=>{
                     <li><Link className='footer__nav-link' to={"/results"}>Buscador</Link></li>
                 </ul>
             </nav>
+            <div className='footer__socials'>
+                <h3>Siguenos</h3>
+                <Socials/>
+            </div>
             <ul className='footer__times'>
                 <li className='footer__time'><p className='footer__day'>Lunes</p>...........08:00am - 07:00pm</li>
                 <li className='footer__time'><p className='footer__day'>Martes</p>..........08:00am - 07:00pm</li>
@@ -28,7 +33,7 @@ const Footer: React.FC<FooterProps> = ()=>{
         <section className='footer__bottom'>
             <ul className='footer__contact'>
                 <li>contact@joyatinmoviliaria.com</li>
-                <li>638-426-2940</li>
+                <li>638-105-6863</li>
                 <li>Boulevard Freemont 210 Puerto Peñasco, Sonora</li>
             </ul>
         </section>

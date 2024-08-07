@@ -3,6 +3,7 @@ import { ContactProps } from './Contact.props';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { ContactSchema } from './Contact.schema';
 import emailjs from '@emailjs/browser';
+import { Socials } from '../../../../Components/Socials';
 
 const Contact: React.FC<ContactProps> = ()=>(
     <div className='form' id='contact'>
@@ -10,6 +11,7 @@ const Contact: React.FC<ContactProps> = ()=>(
         <div className='contact-info'>
             <p>contacto@joyatinmobiliaria.com</p>
             <p>638-105-6863</p>
+            <Socials/>
         </div>
         <Formik
             initialValues={{

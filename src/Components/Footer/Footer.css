@@ -7,6 +7,15 @@
     background-color: #1b1b1b;
     color: white;
 }
+.footer__socials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.footer__socials>h3{
+    color: #F59C00;
+}
 .footer__top{
     display: flex;
     justify-content: space-between;
@@ -70,6 +79,25 @@
         padding: 4em 6em;
         justify-content: start;
         gap: 3em;
+    }
+}
+@media screen and (max-width:1000px) {
+    .footer__contact{
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    .footer__logo-container{
+        width: 10em;
+    }
+}
+@media screen and (max-width:900px){
+    .footer__top{
+        flex-direction: column;
+        gap: 2em;
+    }
+    .footer__logo-container{
+        width: 15em;
     }
 }
 @media screen and (max-width:800px) {

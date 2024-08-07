@@ -1,6 +1,7 @@
 import './Hero.css';
 import { HeroProps } from './Hero.props';
 import Search from '../../../../Components/Search';
+import { Socials } from '../../../../Components/Socials';
 
 
 const Hero: React.FC<HeroProps> = ()=>{
@@ -10,6 +11,7 @@ const Hero: React.FC<HeroProps> = ()=>{
         <div className='hero__content'>
             <p className='hero__caption'>Your dream home awaits discover it with us.</p>
             <Search showBtn={true}/>
+            <Socials customClass='socials--vertical socials--left'/>
         </div>
     </div>
 }
