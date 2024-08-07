@@ -8,13 +8,11 @@ import { AppContext } from '../../Context/App';
 const LocationMarker = ()=>{
     const {zoomLocation, setZoomLocation,locationLatLng} = useContext(AppContext);
     const map = useMapEvents({
-        click(e){
-            // console.log(e.latlng); 
+        click(){
             if(zoomLocation){
                 map.flyTo(locationLatLng, 18);
                 setZoomLocation(false);
             }
-            
         },
     })
     useEffect(()=>{
