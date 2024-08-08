@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# Joyat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a real state website, it has a home page with information about the company and a page where you can list items available depending the city selected.
 
-Currently, two official plugins are available:
+## Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This website allows the company list the lots available to sell, and give information to each lot like price location, contact information and images
 
-## Expanding the ESLint configuration
+## Main functionalities
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Lots listing
+- Search and filtering
+- Details of each property
+- Direct contact with real state agent
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies used
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **Frontend**: HTML, CSS, Javascript, React
+- **Backend**: Firebase
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Project state
+
+This project is in production and it is in used by the company
+
+## Screenshots
+
+![Home screen](https://res.cloudinary.com/dvdmz9djk/image/upload/v1723078763/JOYAT/images/screenshots/hfxmhyo8e8a6skowlqv2.png)
