@@ -14,7 +14,6 @@ const ResultCard: React.FC<ResulCardProps> = ({lot, index})=>{
         setShowLot(true);
         setSlideshowImages(lot.images)
         setLayers(lot.layers)
-        
     }
 
     return <div className='result-card' key={index} onClick={handleZoom}>
@@ -24,7 +23,7 @@ const ResultCard: React.FC<ResulCardProps> = ({lot, index})=>{
     <ul className='results__list'>
         <li className='results__elem results__elem--name'>{lot.location_name}</li>
         <li className='results__elem results__elem--size'><RxSize color='gray'/>{lot.size}</li>
-        <li className='results__elem results__elem--price'>${lot.price}</li>
+        <li className='results__elem results__elem--price'>${lot.price[0]}{lot.price[1]}</li>
     </ul>
 </div>
 }
