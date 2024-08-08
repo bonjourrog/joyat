@@ -21,8 +21,8 @@ const LotCard: React.FC<LotCardProps> = ()=>{
             </div>
             {
                 lotSelected.images[0].length>0?<div className='lot__images-list'>{lotSelected!==undefined
-                    ?lotSelected.images.map(elem=>
-                        <div className='lot__image' onClick={()=>handleSlideshow()}>
+                    ?lotSelected.images.map((elem, index)=>
+                        <div key={index} className='lot__image' onClick={()=>handleSlideshow()}>
                             <div className='show-images'><RiFullscreenExitFill/></div>
                             <img src={elem} alt=""/>
                         </div>
@@ -38,11 +38,11 @@ const LotCard: React.FC<LotCardProps> = ()=>{
                     <p className= 'lot__detail lot__zise'><RxSize size={13}/>{lotSelected.size}</p>
                     <p className= 'lot__detail lot__floor'> <BsFillHousesFill size={10}/>{lotSelected.floor.toUpperCase()}</p>
                 </div>
-                <strong className='lot__price'>${lotSelected.price}<small>MXN</small></strong>
+                <strong className='lot__price'>${lotSelected.price[0]}<small>{lotSelected.price[1]}</small></strong>
             </div>
             <ul className='lot__contacts'>
-                <li className='lot__contact'><HiOutlineMail color='rgb(108, 108, 238)'/>contacto@joyat.com</li>
-                <li className='lot__contact'><MdOutlinePhoneEnabled color='rgb(108, 108, 238)'/>000 000 0000</li> 
+                <li className='lot__contact'><HiOutlineMail color='rgb(108, 108, 238)'/>contacto@joyatinmobiliaria.com</li>
+                <li className='lot__contact'><MdOutlinePhoneEnabled color='rgb(108, 108, 238)'/>638-105-6863</li> 
             </ul>
         </div>
     </div>
