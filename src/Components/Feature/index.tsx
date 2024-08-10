@@ -15,23 +15,15 @@ const Feature: React.FC<FeatureProps> = ({url, headline, caption, flip})=>{
         window.addEventListener('resize', handleWidth);
         return ()=>window.removeEventListener('resize', handleWidth);
     }, [width])
-    return <section className='feature'>
-        {flip?
-            <div className='feature__message'>
-                <h2 className='feature__headline'>{headline}</h2>
-                <p className='feature__caption'>{caption}</p>
-            </div>:undefined
-        }
+    return <section className='feature' style={{flexDirection:flip?'row-reverse': undefined}}>
         <div className='feature__file'>
             <video autoPlay loop muted playsInline src={url}></video>
             {width<=1200?<DotLottieReact autoplay loop data={clickLottieFile} speed={.4} className='click-icon'/>:<button className='feature__action-btn'>Ver Galeria</button>}
         </div>
-        {!flip?
-            <div className='feature__message'>
+        <div className='feature__message'>
                 <h2 className='feature__headline'>{headline}</h2>
                 <p className='feature__caption'>{caption}</p>
-            </div>:undefined
-        }
+            </div>
     </section>
 }
 export default Feature;
