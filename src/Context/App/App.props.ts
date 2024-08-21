@@ -23,4 +23,6 @@ export interface AppContextProps{
     setSlideshowImages: React.Dispatch<SetStateAction<string[]>>;
     layers:LatLngExpression[] | LatLngExpression[][],
     setLayers:React.Dispatch<SetStateAction<LatLngExpression[] | LatLngExpression[][]>>
+    scrollPosition:number;
+    setScrollPosition: React.Dispatch<SetStateAction<number>>
 }

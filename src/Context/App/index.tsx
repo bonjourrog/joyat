@@ -15,6 +15,7 @@ export const AppProvider:React.FC<AppProviderProps> = ({children})=>{
     const [showSlideshow, setShowSlideShow] = useState<boolean>(false);
     const [slideshowImages, setSlideshowImages] = useState<string[]>([]);
     const [layers, setLayers] = useState<LatLngExpression[] | LatLngExpression[][]>([])
+    const [scrollPosition, setScrollPosition] = useState<number>(window.scrollY);
     return <AppContext.Provider value={{
         selectedCity,
         setSelectedCity,
@@ -33,7 +34,9 @@ export const AppProvider:React.FC<AppProviderProps> = ({children})=>{
         slideshowImages, 
         setSlideshowImages,
         layers, 
-        setLayers
+        setLayers,
+        scrollPosition, 
+        setScrollPosition
     }}>
         {children}
     </AppContext.Provider>
