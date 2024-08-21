@@ -1,0 +1,30 @@
+.galerry{
+    width: 100vw;
+}
+.gallery__header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.gallery__header>video{
+    width: 100%;
+}
+.gallery__header::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+.gallery__list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.gallery__list>img{
+    width: 33%;
+}
