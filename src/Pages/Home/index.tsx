@@ -1,3 +1,4 @@
+import { useContext, useEffect, useRef } from 'react';
 import Feature from '../../Components/Feature';
 import { FeatureProps } from '../../Components/Feature/Feature.props';
 import Footer from '../../Components/Footer';
@@ -10,15 +11,33 @@ import Location from './Components/Location';
 import WhyUs from './Components/WhyUs';
 import './Home.css';
 import { HomeProps } from './Home.props';
+import { AppContext } from '../../Context/App';
 
 const Home: React.FC<HomeProps> = ()=>{
+    const {scrollPosition, setScrollPosition} = useContext(AppContext);
+    const homeRef = useRef<HTMLDivElement>(null)
 
     const features: FeatureProps[] = Feature_DATA_MOCK;
+    const handleScroll = ()=>{
+        const {current} = homeRef
+        if(current){
+            setScrollPosition(current.scrollTop)
+        }
+    }
 
-    return <div className='home'>
-        <div className='home__header'>
-            <Header showNavigation={true}/>
-        </div>
+    useEffect(()=>{
+        const {current} = homeRef
+        if(!current){
+            return
+        }
+        current.addEventListener('scroll', handleScroll);
+        return ()=>{
+            current.removeEventListener('scroll', handleScroll);
+        }
+    }, [scrollPosition])
+
+    return <div className='home' ref={homeRef}>
+        <Header showNavigation={true}/>
         <Hero/>
         <About/>
         <section className='home__feature'>
