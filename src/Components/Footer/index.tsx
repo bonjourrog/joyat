@@ -7,7 +7,7 @@ const Footer: React.FC<FooterProps> = ()=>{
     return <footer className='footer'>
         <section className='footer__top'>
             <div className='footer__logo-container'>
-                <img className='footer__logo' src="https://res.cloudinary.com/dvdmz9djk/image/upload/v1712182834/JOYAT/LOGO/kyzdbaqzqv58nnkdah9x.svg" alt="" />
+                <img className='footer__logo' src="https://res.cloudinary.com/dvdmz9djk/image/upload/v1724189435/JOYAT/images/szkxdyuo7dvtlmr5oo6d.png" alt="" />
             </div>
             <nav className='footer__nav'>
                 <ul>
@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ()=>{
         </section>
         <section className='footer__bottom'>
             <ul className='footer__contact'>
-                <li>contact@joyatinmoviliaria.com</li>
+                <li>contacto@joyatinmobiliaria.com</li>
                 <li>638-105-6863</li>
                 <li>Boulevard Freemont 210 Puerto Peñasco, Sonora</li>
             </ul>
