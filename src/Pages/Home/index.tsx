@@ -47,10 +47,6 @@ const Home: React.FC<HomeProps> = ()=>{
         getFeatureImages();
     },[])
     useEffect(()=>{
-        console.log(locationImages);
-        
-    },[locationImages])
-    useEffect(()=>{
         const {current} = homeRef
         if(!current){
             return

@@ -21,7 +21,7 @@ const Feature: React.FC<FeatureProps> = ({url, headline, caption, flip, images})
         <div className='feature__message'>
             <div className='feature__images'>
                 {
-                    images?.map((image, index)=>index===6?null:<div>
+                    images?.map((image, index)=>index===6?null:<div key={index}>
                         <img src={image}/>
                     </div>)
                 }
