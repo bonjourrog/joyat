@@ -13,6 +13,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    object-fit: fill;
 }
 .feature__file::after{
     content: "";
@@ -45,19 +46,60 @@
     width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     gap: 4em;
-    padding: 4em;
     background: #1b1b1d;
     color: white;
 }
+.feature__images{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0;
+    width: 100%;
+    max-height: 100%;
+}
+.feature__images>div{
+    position: relative;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 100%;
+    border:.1em solid rgb(17, 17, 17);
+    border-radius: .3em;
+    cursor: pointer;
+    overflow: hidden;
+}
+.feature__images>div::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1b1b1d5a;
+}
+.feature__images>div>img{
+    width: 100%;
+    object-fit: cover;
+}
 .feature__headline{
+    position: absolute;
+    left: 50%;
+    bottom: 4em;
+    transform: translateX(-50%);
     font-size: 3em;
+    color: rgb(227, 227, 227);
+    z-index: 3;
 }
 .feature__caption{
+    position: absolute;
+    left: 50%;
+    bottom: 4em;
+    transform: translateX(-50%);
     line-height: 1.6em;
     text-align: center;
+    color: rgb(204, 204, 204);
+    z-index: 3;
 }
 .click-icon{
     position: absolute;
@@ -91,24 +133,23 @@
         height: auto;
     }
     .feature__message{
-        position: absolute;
-        left: 0;
-        top: 0;
-        justify-content: flex-end;
         width: 100%;
         height: 100%;
-        background-color: transparent;
         z-index: 3;
     }
+    .feature__images{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    .feature__images>div{
+        width: 100%;
+}
     .feature__headline{
         position: absolute;
-        top: .5em;
-        left: .5em;
     }
 }
 @media screen and (max-width:600px) {
     .feature{
-        height: 21em;
         background-color: #1b1b1d;
     }
     .feature__file::after{

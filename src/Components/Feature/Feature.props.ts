@@ -4,4 +4,5 @@ export interface FeatureProps{
     headline?:string;
     caption?:string;
     flip?:boolean;
+    images?:string[];
 }
