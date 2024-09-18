@@ -2,7 +2,6 @@ import { useContext, useState } from 'react';
 import './Header.css';
 import { HeaderProps } from './header.props';
 import { HiMenuAlt3 } from "react-icons/hi";
-import { Link } from "react-scroll";
 import {Link as NavigaTo} from 'react-router-dom';
 import { AppContext } from '../../Context/App';
 
@@ -15,9 +14,21 @@ const Header: React.FC<HeaderProps> = ({showNavigation})=>{
             showNavigation ? 
                 <nav className='navigation' style={{right: menuOpened ? '0em' : '-100vw'}}>
                     <ul className='navigation__list'>
-                        <li className='navigation__link'><Link onClick={()=>setMenuOpened(false)} to='about' smooth={true}>Conocenos</Link></li>
-                        <li className='navigation__link'><Link onClick={()=>setMenuOpened(false)} to='contact' smooth={true}>Contacto</Link></li>
-                        <li className='navigation__link'><Link onClick={()=>setMenuOpened(false)} to='location'smooth={true}>Ubicación</Link></li>
+                        <li className='navigation__link' onClick={()=>{
+                            const about = document.getElementById('about');
+                            setMenuOpened(false)
+                            about?.scrollIntoView({behavior:'smooth'})
+                        }}>Conocenos</li>
+                        <li className='navigation__link' onClick={()=>{
+                            const contact = document.getElementById('contact');
+                            setMenuOpened(false)
+                            contact?.scrollIntoView({behavior:'smooth'})
+                        }}>Contacto</li>
+                        <li className='navigation__link' onClick={()=>{
+                            const location = document.getElementById('location');
+                            setMenuOpened(false)
+                            location?.scrollIntoView({behavior:'smooth'})
+                        }}>Ubicación</li>
                     </ul>
                 </nav>
             : null
