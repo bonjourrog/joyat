@@ -16,6 +16,14 @@ const ResultCard: React.FC<ResulCardProps> = ({lot, index})=>{
         setLayers(lot.layers)
     }
 
+    function formatCurrency(numero: number) {
+        return numero.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+        });
+    }
+
     return <div className='result-card' key={index} onClick={handleZoom}>
     <div className='results-image'>
         <img src={lot.images[0]} alt="" />
@@ -23,7 +31,7 @@ const ResultCard: React.FC<ResulCardProps> = ({lot, index})=>{
     <ul className='results__list'>
         <li className='results__elem results__elem--name'>{lot.location_name}</li>
         <li className='results__elem results__elem--size'><RxSize color='gray'/>{lot.size}</li>
-        <li className='results__elem results__elem--price'>${lot.price[0]}{lot.price[1]}</li>
+        <li className='results__elem results__elem--price'>{formatCurrency(Number(lot.price[0]))}{lot.price[1]}</li>
     </ul>
 </div>
 }
